@@ -10,17 +10,18 @@ export const FRIENDS_FAIL = 'FRIENDS_FAIL'
 export const getFriends = () => dispatch => {
     dispatch ({type: FRIENDS_GET });
     axios
-        .get(`url here`)
+        .get('http://localhost:5000/api/friends')
         .then(response =>
             dispatch({type: FRIENDS_SUCCESS, payload: response.data}))
         .catch(err => dispatch({type: FRIENDS_FAIL, payload: err}))
 };
 
-export const makeFriend = (friend) = dispatch => {
+// makes a new friend
+export const makeFriend = (friend) =>dispatch => {
     dispatch ({type: FRIENDS_POST});
     axios
-        .post(`url here`)
+        .post('http://localhost:5000/api/friends')
         .then(response =>
             dispatch({type: FRIENDS_SUCCESS, payload: response.data}))
-        .catch(err => dispatch({type: FIRNED_FAIL, payload: err}))
+        .catch(err => dispatch({type: FRIENDS_FAIL, payload: err}))
 };

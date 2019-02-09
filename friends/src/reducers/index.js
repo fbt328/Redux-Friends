@@ -11,7 +11,7 @@ const initialState = {
     error: null
 }
 
-export const friendsReducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case FRIENDS_GET:
             return {...state, fetchingFriends: true};
@@ -25,6 +25,8 @@ export const friendsReducer = (state = initialState, action) => {
             return state; 
     }
 }
+
+export default reducer
 
 
 // example initialState from project info
